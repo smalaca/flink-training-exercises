@@ -3,8 +3,6 @@ package com.smalaca.transaction.source;
 import com.smalaca.domain.TransactionEvent;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
 
-import java.util.UUID;
-
 public class TransactionEventSource implements SourceFunction<TransactionEvent> {
     private final RandomTransactionEventFactory factory = new RandomTransactionEventFactory();
 
