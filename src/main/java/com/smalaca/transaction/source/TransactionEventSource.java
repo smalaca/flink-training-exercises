@@ -8,6 +8,12 @@ public class TransactionEventSource implements SourceFunction<TransactionEvent> 
 
     @Override
     public void run(SourceContext<TransactionEvent> sourceContext) {
+//        while (true) {
+//            Random random = new Random();
+//            int i = random.nextInt(4);
+//
+//
+//        }
         sourceContext.collect(factory.allocation());
         sourceContext.collect(factory.allocation());
         sourceContext.collect(factory.allocation());
@@ -17,7 +23,6 @@ public class TransactionEventSource implements SourceFunction<TransactionEvent> 
 
         sourceContext.collect(factory.block());
         sourceContext.collect(factory.block());
-
     }
 
     @Override

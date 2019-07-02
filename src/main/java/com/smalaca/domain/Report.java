@@ -13,6 +13,10 @@ public class Report {
         this.reportType = reportType;
     }
 
+    static Report aNew(String reportId, TransactionEvent transactionEvent) {
+        return new Report(reportId, transactionEvent.transactionId(), transactionEvent.transactionType(), ReportType.NEW);
+    }
+
     public String reportId() {
         return reportId;
     }
