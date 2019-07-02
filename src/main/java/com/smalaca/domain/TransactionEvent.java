@@ -25,7 +25,7 @@ public class TransactionEvent {
         return new TransactionEvent(transactionId, transactionVersion, TransactionType.BLOCK);
     }
 
-    String transactionId() {
+    public String transactionId() {
         return transactionId;
     }
 

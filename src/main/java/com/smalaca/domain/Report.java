@@ -17,20 +17,8 @@ public class Report {
         return new Report(reportId, transactionEvent.transactionId(), transactionEvent.transactionType(), ReportType.NEW);
     }
 
-    public String reportId() {
-        return reportId;
-    }
-
-    public String transactionId() {
-        return transactionId;
-    }
-
-    public TransactionType transactionType() {
-        return transactionType;
-    }
-
-    public ReportType reportType() {
-        return reportType;
+    static Report anAmend(String reportId, TransactionEvent transactionEvent) {
+        return new Report(reportId, transactionEvent.transactionId(), transactionEvent.transactionType(), ReportType.AMEND);
     }
 
     @Override

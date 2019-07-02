@@ -7,13 +7,24 @@ import java.util.UUID;
 
 class RandomTransactionEventFactory implements Serializable {
     private static final long serialVersionUID = 13L;
+    private int counter = 1;
+    private String lastId;
 
     private long randomVersion() {
-        return 1L;
+        return counter;
     }
 
     private String randomId() {
-        return UUID.randomUUID().toString();
+        if (counter == 1) {
+            lastId = UUID.randomUUID().toString();
+            counter++;
+        } else if (counter == 2) {
+            counter++;
+        } else if (counter == 3) {
+            counter = 1;
+        }
+
+        return lastId;
     }
 
     TransactionEvent allocation() {

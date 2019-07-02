@@ -10,7 +10,7 @@ public class TransactionEventSource implements SourceFunction<TransactionEvent> 
 
     @Override
     public void run(SourceContext<TransactionEvent> sourceContext) throws InterruptedException {
-        for(int i = 0; i<100000; i++) {
+        for(int i = 0; i<1000; i++) {
             switch (transactionEventType()) {
                 case 0:
                     sourceContext.collect(factory.allocation());
