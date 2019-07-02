@@ -1,5 +1,7 @@
 package com.smalaca.domain;
 
+import static com.smalaca.domain.TransactionType.BLOCK;
+
 public class TransactionEvent {
     private final String transactionId;
     private final String transactionVersion;
@@ -33,5 +35,9 @@ public class TransactionEvent {
 
     public TransactionType transactionType() {
         return transactionType;
+    }
+
+    public boolean isNotBlock() {
+        return BLOCK.equals(transactionType);
     }
 }

@@ -2,10 +2,11 @@ package com.smalaca.transaction.source;
 
 import com.smalaca.domain.TransactionEvent;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-class RandomTransactionEventFactory {
-
+class RandomTransactionEventFactory implements Serializable {
+    private static final long serialVersionUID = 13L;
 
     private String randomVersion() {
         return UUID.randomUUID().toString();
