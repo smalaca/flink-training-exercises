@@ -19,9 +19,9 @@ public class TransactionEventSource implements SourceFunction<TransactionEvent> 
                 case 2:
                     sourceContext.collect(factory.block());
             }
-        }
 
-        Thread.currentThread().join();
+            Thread.sleep(100);
+        }
     }
 
     private int transactionEventType() {
