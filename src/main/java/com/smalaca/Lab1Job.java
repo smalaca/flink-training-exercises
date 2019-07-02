@@ -12,8 +12,7 @@ public class Lab1Job {
     public static void main(String[] args) throws Exception {
         Configuration configuration = new Configuration();
         configuration.setBoolean(ConfigConstants.LOCAL_START_WEBSERVER, true);
-        int parallelism = 3;
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment(parallelism, configuration);
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(configuration);
 
         DataStreamSource<TransactionEvent> streamSource = env.addSource(new TransactionEventSource());
         ReportFactory reportFactory = new ReportFactory();

@@ -7,7 +7,7 @@ public class TransactionEventSource implements SourceFunction<TransactionEvent> 
     private final RandomTransactionEventFactory factory = new RandomTransactionEventFactory();
 
     @Override
-    public void run(SourceContext<TransactionEvent> sourceContext) {
+    public void run(SourceContext<TransactionEvent> sourceContext) throws InterruptedException {
 //        while (true) {
 //            Random random = new Random();
 //            int i = random.nextInt(4);
@@ -23,6 +23,8 @@ public class TransactionEventSource implements SourceFunction<TransactionEvent> 
 
         sourceContext.collect(factory.block());
         sourceContext.collect(factory.block());
+
+        Thread.currentThread().join();
     }
 
     @Override
