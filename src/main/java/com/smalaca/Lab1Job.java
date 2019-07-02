@@ -13,6 +13,7 @@ public class Lab1Job {
         Configuration configuration = new Configuration();
         configuration.setBoolean(ConfigConstants.LOCAL_START_WEBSERVER, true);
         StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(configuration);
+        env.disableOperatorChaining();
 
         DataStreamSource<TransactionEvent> streamSource = env.addSource(new TransactionEventSource());
         ReportFactory reportFactory = new ReportFactory();
