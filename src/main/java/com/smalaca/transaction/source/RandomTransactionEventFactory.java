@@ -8,8 +8,8 @@ import java.util.UUID;
 class RandomTransactionEventFactory implements Serializable {
     private static final long serialVersionUID = 13L;
 
-    private String randomVersion() {
-        return UUID.randomUUID().toString();
+    private long randomVersion() {
+        return 1L;
     }
 
     private String randomId() {
