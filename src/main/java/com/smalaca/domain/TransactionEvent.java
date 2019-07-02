@@ -40,4 +40,13 @@ public class TransactionEvent {
     public boolean isNotBlock() {
         return BLOCK.equals(transactionType);
     }
+
+    @Override
+    public String toString() {
+        return "TransactionEvent{" +
+                "transactionId='" + transactionId + '\'' +
+                ", transactionVersion='" + transactionVersion + '\'' +
+                ", transactionType=" + transactionType +
+                '}';
+    }
 }

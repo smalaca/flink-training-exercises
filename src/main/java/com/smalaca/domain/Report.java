@@ -28,4 +28,14 @@ public class Report {
     public ReportType reportType() {
         return reportType;
     }
+
+    @Override
+    public String toString() {
+        return "Report{" +
+                "reportId='" + reportId + '\'' +
+                ", transactionId='" + transactionId + '\'' +
+                ", transactionType=" + transactionType +
+                ", reportType=" + reportType +
+                '}';
+    }
 }
