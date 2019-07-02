@@ -10,7 +10,9 @@ public class Lab1Job {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         DataStreamSource<TransactionEvent> streamSource = env.addSource(new TransactionEventSource());
-        streamSource.filter(TransactionEvent::isNotBlock);
+        streamSource
+                .filter(TransactionEvent::isNotBlock)
+                .print();
 
         env.execute();
     }

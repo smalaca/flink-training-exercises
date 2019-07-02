@@ -11,8 +11,10 @@ public class TransactionEventSource implements SourceFunction<TransactionEvent> 
         sourceContext.collect(factory.allocation());
         sourceContext.collect(factory.allocation());
         sourceContext.collect(factory.allocation());
+
         sourceContext.collect(factory.bilateral());
         sourceContext.collect(factory.bilateral());
+
         sourceContext.collect(factory.block());
         sourceContext.collect(factory.block());
 

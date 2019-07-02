@@ -38,7 +38,7 @@ public class TransactionEvent {
     }
 
     public boolean isNotBlock() {
-        return BLOCK.equals(transactionType);
+        return !BLOCK.equals(transactionType);
     }
 
     @Override
